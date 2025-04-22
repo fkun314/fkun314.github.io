@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Rice Bowl V3 - 詳細説明</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-top: 60px;
+        }
+        .navbar {
+            background-color: #2c3e50;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .feature-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .tech-box {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .step-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .step-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .step-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+        .highlight {
+            background-color: #fffde7;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .page-header {
+            background-color: #3498db;
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+        .language-switcher {
+            margin-left: 20px;
+        }
+        .language-switcher .btn {
+            margin-left: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Magical Rice Bowl V3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="detail.html" data-i18n="nav.details">詳細説明</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="privacy.html" data-i18n="nav.privacy">プライバシーポリシー</a>
+                    </li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('ja')">日本語</button>
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('en')">English</button>
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('zh')">中文</button>
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('ko')">한국어</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 data-i18n="header.title">Magical Rice Bowl V3 - 詳細説明</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="feature-box">
+            <h2 data-i18n="overview.title">アプリの概要</h2>
+            <p data-i18n="overview.description">このアプリは、カメラで撮影した食事の画像を、別の料理のスタイルに変換するアプリです。例えば、普通のごはんを「カレー」や「ラーメン」などのスタイルに変換することができます。</p>
+        </div>
+
+        <div class="feature-box">
+            <h2 data-i18n="features.title">主な機能</h2>
+            <ul class="step-list">
+                <li data-i18n="features.realtime">リアルタイムカメラ撮影</li>
+                <li data-i18n="features.styles">食事のスタイル変換（23種類の料理スタイルから選択可能）</li>
+                <li data-i18n="features.save">変換結果の保存機能</li>
+                <li data-i18n="features.pause">一時停止/再開機能</li>
+                <li data-i18n="features.time">処理時間の表示</li>
+            </ul>
+        </div>
+
+        <div class="tech-box">
+            <h2 data-i18n="tech.title">技術的な仕組み</h2>
+
+            <h3 data-i18n="tech.flow.title">1. 画像処理の流れ</h3>
+            <ol>
+                <li data-i18n="tech.flow.step1">カメラで撮影した画像を取得</li>
+                <li data-i18n="tech.flow.step2">食事の部分を自動的に検出（セグメンテーション）</li>
+                <li data-i18n="tech.flow.step3">選択したスタイルに変換</li>
+                <li data-i18n="tech.flow.step4">元の背景と合成して表示</li>
+            </ol>
+
+            <h3 data-i18n="tech.gan.title">2. GAN（Generative Adversarial Network）について</h3>
+            <p data-i18n="tech.gan.description">GANは「敵対的生成ネットワーク」と呼ばれる技術です。詳細は以下の論文をご参照ください：</p>
+            <p><a href="https://arxiv.org/abs/1406.2661" target="_blank" class="btn btn-outline-primary" data-i18n="tech.gan.paper">Generative Adversarial Networks (2014)</a></p>
+            <ul>
+                <li data-i18n="tech.gan.mechanism.title"><strong>2つのAIが競い合う仕組み：</strong>
+                    <ul>
+                        <li data-i18n="tech.gan.mechanism.generator">1つ目のAI（Generator）：新しい画像を生成する</li>
+                        <li data-i18n="tech.gan.mechanism.discriminator">2つ目のAI（Discriminator）：本物か偽物かを判定する</li>
+                    </ul>
+                </li>
+                <li data-i18n="tech.gan.learning.title"><strong>学習の仕組み：</strong>
+                    <ul>
+                        <li data-i18n="tech.gan.learning.generator">Generatorは「本物らしい画像」を作ろうとする</li>
+                        <li data-i18n="tech.gan.learning.discriminator">Discriminatorは「本物と偽物を見分けよう」とする</li>
+                        <li data-i18n="tech.gan.learning.result">この競争を通じて、Generatorは次第に本物らしい画像を作れるようになる</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 data-i18n="tech.stargan.title">3. StarGANv2について</h3>
+            <p data-i18n="tech.stargan.description">StarGANv2は、より高度な画像変換が可能なGANの一種です。詳細は以下の論文をご参照ください：</p>
+            <p><a href="https://arxiv.org/abs/1912.01865" target="_blank" class="btn btn-outline-primary" data-i18n="tech.stargan.paper">StarGAN v2: Diverse Image Synthesis for Multiple Domains (2019)</a></p>
+            <ul>
+                <li data-i18n="tech.stargan.features.title"><strong>特徴：</strong>
+                    <ul>
+                        <li data-i18n="tech.stargan.features.multiple">1つのモデルで複数のスタイル変換が可能</li>
+                        <li data-i18n="tech.stargan.features.reference">参照画像のスタイルを忠実に再現</li>
+                        <li data-i18n="tech.stargan.features.quality">高品質な変換結果</li>
+                    </ul>
+                </li>
+                <li data-i18n="tech.stargan.usage.title"><strong>このアプリでの使用：</strong>
+                    <ul>
+                        <li data-i18n="tech.stargan.usage.models">23種類の料理スタイルを1つのモデルで処理</li>
+                        <li data-i18n="tech.stargan.usage.realtime">リアルタイムで変換可能</li>
+                        <li data-i18n="tech.stargan.usage.natural">自然な見た目の変換結果</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 data-i18n="tech.segmentation.title">4. セグメンテーション（DeepLabV3）</h3>
+            <p data-i18n="tech.segmentation.description">DeepLabV3は、高精度なセマンティックセグメンテーションを実現する技術です。詳細は以下の論文をご参照ください：</p>
+            <p><a href="https://arxiv.org/abs/1706.05587" target="_blank" class="btn btn-outline-primary" data-i18n="tech.segmentation.paper">Rethinking Atrous Convolution for Semantic Image Segmentation (2017)</a></p>
+            <ul>
+                <li data-i18n="tech.segmentation.detection">画像の中から食事の部分を自動的に検出</li>
+                <li data-i18n="tech.segmentation.separation">背景と食事部分を分離</li>
+                <li data-i18n="tech.segmentation.target">変換対象を正確に特定</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h2 data-i18n="usage.title">使い方</h2>
+            <ol class="step-list">
+                <li data-i18n="usage.step1">アプリを起動するとカメラが起動</li>
+                <li data-i18n="usage.step2">画面下部の料理スタイルから変換したいスタイルを選択</li>
+                <li data-i18n="usage.step3">カメラに食事を映すと、リアルタイムで変換結果が表示</li>
+                <li data-i18n="usage.step4">気に入った結果ができたら保存ボタンで保存可能</li>
+                <li data-i18n="usage.step5">一時停止ボタンで変換を一時停止することも可能</li>
+            </ol>
+        </div>
+
+        <div class="tech-box">
+            <h2 data-i18n="characteristics.title">技術的な特徴</h2>
+            <ul>
+                <li data-i18n="characteristics.ui">SwiftUIを使用したモダンなUI</li>
+                <li data-i18n="characteristics.coreml">CoreMLによる高速な推論処理</li>
+                <li data-i18n="characteristics.optimization">リアルタイム処理の最適化</li>
+                <li data-i18n="characteristics.orientation">デバイスの向きに応じたレイアウト調整</li>
+                <li data-i18n="characteristics.error">エラー処理とユーザーフィードバック</li>
+            </ul>
+        </div>
+
+        <p class="text-center mt-4" data-i18n="conclusion">このアプリは、最先端のAI技術を活用して、ユーザーに楽しい体験を提供することを目指しています。</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">© 2024 Magical Rice Bowl V3. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- i18n Data -->
+    <script>
+        const translations = {
+            ja: {
+                nav: {
+                    home: "ホーム",
+                    details: "詳細説明",
+                    privacy: "プライバシーポリシー"
+                },
+                header: {
+                    title: "Magical Rice Bowl V3 - 詳細説明"
+                },
+                overview: {
+                    title: "アプリの概要",
+                    description: "このアプリは、カメラで撮影した食事の画像を、別の料理のスタイルに変換するアプリです。例えば、普通のごはんを「カレー」や「ラーメン」などのスタイルに変換することができます。"
+                },
+                features: {
+                    title: "主な機能",
+                    realtime: "リアルタイムカメラ撮影",
+                    styles: "食事のスタイル変換（23種類の料理スタイルから選択可能）",
+                    save: "変換結果の保存機能",
+                    pause: "一時停止/再開機能",
+                    time: "処理時間の表示"
+                },
+                tech: {
+                    title: "技術的な仕組み",
+                    flow: {
+                        title: "1. 画像処理の流れ",
+                        step1: "カメラで撮影した画像を取得",
+                        step2: "食事の部分を自動的に検出（セグメンテーション）",
+                        step3: "選択したスタイルに変換",
+                        step4: "元の背景と合成して表示"
+                    },
+                    gan: {
+                        title: "2. GAN（Generative Adversarial Network）について",
+                        description: "GANは「敵対的生成ネットワーク」と呼ばれる技術です。詳細は以下の論文をご参照ください：",
+                        paper: "Generative Adversarial Networks (2014)",
+                        mechanism: {
+                            title: "2つのAIが競い合う仕組み：",
+                            generator: "1つ目のAI（Generator）：新しい画像を生成する",
+                            discriminator: "2つ目のAI（Discriminator）：本物か偽物かを判定する"
+                        },
+                        learning: {
+                            title: "学習の仕組み：",
+                            generator: "Generatorは「本物らしい画像」を作ろうとする",
+                            discriminator: "Discriminatorは「本物と偽物を見分けよう」とする",
+                            result: "この競争を通じて、Generatorは次第に本物らしい画像を作れるようになる"
+                        }
+                    },
+                    stargan: {
+                        title: "3. StarGANv2について",
+                        description: "StarGANv2は、より高度な画像変換が可能なGANの一種です。詳細は以下の論文をご参照ください：",
+                        paper: "StarGAN v2: Diverse Image Synthesis for Multiple Domains (2019)",
+                        features: {
+                            title: "特徴：",
+                            multiple: "1つのモデルで複数のスタイル変換が可能",
+                            reference: "参照画像のスタイルを忠実に再現",
+                            quality: "高品質な変換結果"
+                        },
+                        usage: {
+                            title: "このアプリでの使用：",
+                            models: "23種類の料理スタイルを1つのモデルで処理",
+                            realtime: "リアルタイムで変換可能",
+                            natural: "自然な見た目の変換結果"
+                        }
+                    },
+                    segmentation: {
+                        title: "4. セグメンテーション（DeepLabV3）",
+                        description: "DeepLabV3は、高精度なセマンティックセグメンテーションを実現する技術です。詳細は以下の論文をご参照ください：",
+                        paper: "Rethinking Atrous Convolution for Semantic Image Segmentation (2017)",
+                        detection: "画像の中から食事の部分を自動的に検出",
+                        separation: "背景と食事部分を分離",
+                        target: "変換対象を正確に特定"
+                    }
+                },
+                usage: {
+                    title: "使い方",
+                    step1: "アプリを起動するとカメラが起動",
+                    step2: "画面下部の料理スタイルから変換したいスタイルを選択",
+                    step3: "カメラに食事を映すと、リアルタイムで変換結果が表示",
+                    step4: "気に入った結果ができたら保存ボタンで保存可能",
+                    step5: "一時停止ボタンで変換を一時停止することも可能"
+                },
+                characteristics: {
+                    title: "技術的な特徴",
+                    ui: "SwiftUIを使用したモダンなUI",
+                    coreml: "CoreMLによる高速な推論処理",
+                    optimization: "リアルタイム処理の最適化",
+                    orientation: "デバイスの向きに応じたレイアウト調整",
+                    error: "エラー処理とユーザーフィードバック"
+                },
+                conclusion: "このアプリは、最先端のAI技術を活用して、ユーザーに楽しい体験を提供することを目指しています。"
+            },
+            en: {
+                nav: {
+                    home: "Home",
+                    details: "Details",
+                    privacy: "Privacy Policy"
+                },
+                header: {
+                    title: "Magical Rice Bowl V3 - Details"
+                },
+                overview: {
+                    title: "App Overview",
+                    description: "This app transforms food images captured by the camera into different culinary styles. For example, it can transform plain rice into styles like 'curry' or 'ramen'."
+                },
+                features: {
+                    title: "Main Features",
+                    realtime: "Real-time Camera Capture",
+                    styles: "Food Style Transformation (23 different culinary styles available)",
+                    save: "Save Transformation Results",
+                    pause: "Pause/Resume Function",
+                    time: "Processing Time Display"
+                },
+                tech: {
+                    title: "Technical Mechanism",
+                    flow: {
+                        title: "1. Image Processing Flow",
+                        step1: "Capture image from camera",
+                        step2: "Automatically detect food portion (segmentation)",
+                        step3: "Transform to selected style",
+                        step4: "Composite with original background"
+                    },
+                    gan: {
+                        title: "2. About GAN (Generative Adversarial Network)",
+                        description: "GAN is a technology called 'Generative Adversarial Network'. Please refer to the following paper:",
+                        paper: "Generative Adversarial Networks (2014)",
+                        mechanism: {
+                            title: "Two AIs Competing:",
+                            generator: "First AI (Generator): Generates new images",
+                            discriminator: "Second AI (Discriminator): Determines if images are real or fake"
+                        },
+                        learning: {
+                            title: "Learning Mechanism:",
+                            generator: "Generator tries to create 'realistic-looking images'",
+                            discriminator: "Discriminator tries to 'distinguish between real and fake'",
+                            result: "Through this competition, Generator gradually becomes able to create realistic images"
+                        }
+                    },
+                    stargan: {
+                        title: "3. About StarGANv2",
+                        description: "StarGANv2 is a type of GAN capable of more advanced image transformation. Please refer to the following paper:",
+                        paper: "StarGAN v2: Diverse Image Synthesis for Multiple Domains (2019)",
+                        features: {
+                            title: "Features:",
+                            multiple: "Multiple style transformations with a single model",
+                            reference: "Faithfully reproduces reference image styles",
+                            quality: "High-quality transformation results"
+                        },
+                        usage: {
+                            title: "Usage in this app:",
+                            models: "Processes 23 food styles with a single model",
+                            realtime: "Real-time transformation possible",
+                            natural: "Natural-looking transformation results"
+                        }
+                    },
+                    segmentation: {
+                        title: "4. Segmentation (DeepLabV3)",
+                        description: "DeepLabV3 is a technology that achieves high-precision semantic segmentation. Please refer to the following paper:",
+                        paper: "Rethinking Atrous Convolution for Semantic Image Segmentation (2017)",
+                        detection: "Automatically detects food portion from image",
+                        separation: "Separates background and food portion",
+                        target: "Accurately identifies transformation target"
+                    }
+                },
+                usage: {
+                    title: "How to Use",
+                    step1: "Camera starts when app launches",
+                    step2: "Select desired style from food styles at bottom of screen",
+                    step3: "Point camera at food to see real-time transformation",
+                    step4: "Save results you like with save button",
+                    step5: "Can pause transformation with pause button"
+                },
+                characteristics: {
+                    title: "Technical Characteristics",
+                    ui: "Modern UI using SwiftUI",
+                    coreml: "Fast inference processing with CoreML",
+                    optimization: "Real-time processing optimization",
+                    orientation: "Layout adjustment based on device orientation",
+                    error: "Error handling and user feedback"
+                },
+                conclusion: "This app aims to provide users with an enjoyable experience by utilizing cutting-edge AI technology."
+            },
+            zh: {
+                nav: {
+                    home: "首页",
+                    details: "详细说明",
+                    privacy: "隐私政策"
+                },
+                header: {
+                    title: "Magical Rice Bowl V3 - 详细说明"
+                },
+                overview: {
+                    title: "应用概述",
+                    description: "这个应用可以将相机拍摄的食物图像转换为不同的烹饪风格。例如，可以将普通的米饭转换为'咖喱'或'拉面'等风格。"
+                },
+                features: {
+                    title: "主要功能",
+                    realtime: "实时相机拍摄",
+                    styles: "食物风格转换（23种不同烹饪风格可选）",
+                    save: "保存转换结果",
+                    pause: "暂停/恢复功能",
+                    time: "处理时间显示"
+                },
+                tech: {
+                    title: "技术机制",
+                    flow: {
+                        title: "1. 图像处理流程",
+                        step1: "从相机获取图像",
+                        step2: "自动检测食物部分（分割）",
+                        step3: "转换为选定风格",
+                        step4: "与原始背景合成显示"
+                    },
+                    gan: {
+                        title: "2. 关于GAN（生成对抗网络）",
+                        description: "GAN是一种称为'生成对抗网络'的技术。请参考以下论文：",
+                        paper: "Generative Adversarial Networks (2014)",
+                        mechanism: {
+                            title: "两个AI竞争：",
+                            generator: "第一个AI（生成器）：生成新图像",
+                            discriminator: "第二个AI（判别器）：判断图像真假"
+                        },
+                        learning: {
+                            title: "学习机制：",
+                            generator: "生成器尝试创建'逼真的图像'",
+                            discriminator: "判别器尝试'区分真假'",
+                            result: "通过这种竞争，生成器逐渐能够创建逼真的图像"
+                        }
+                    },
+                    stargan: {
+                        title: "3. 关于StarGANv2",
+                        description: "StarGANv2是一种能够进行更高级图像转换的GAN。请参考以下论文：",
+                        paper: "StarGAN v2: Diverse Image Synthesis for Multiple Domains (2019)",
+                        features: {
+                            title: "特点：",
+                            multiple: "单个模型实现多种风格转换",
+                            reference: "忠实再现参考图像风格",
+                            quality: "高质量转换结果"
+                        },
+                        usage: {
+                            title: "在本应用中的使用：",
+                            models: "单个模型处理23种食物风格",
+                            realtime: "可实现实时转换",
+                            natural: "自然外观的转换结果"
+                        }
+                    },
+                    segmentation: {
+                        title: "4. 分割（DeepLabV3）",
+                        description: "DeepLabV3是一种实现高精度语义分割的技术。请参考以下论文：",
+                        paper: "Rethinking Atrous Convolution for Semantic Image Segmentation (2017)",
+                        detection: "自动从图像中检测食物部分",
+                        separation: "分离背景和食物部分",
+                        target: "准确识别转换目标"
+                    }
+                },
+                usage: {
+                    title: "使用方法",
+                    step1: "应用启动时相机启动",
+                    step2: "从屏幕底部的食物风格中选择想要的风格",
+                    step3: "将相机对准食物即可看到实时转换效果",
+                    step4: "喜欢的转换结果可以用保存按钮保存",
+                    step5: "可以用暂停按钮暂停转换"
+                },
+                characteristics: {
+                    title: "技术特点",
+                    ui: "使用SwiftUI的现代UI",
+                    coreml: "使用CoreML进行快速推理处理",
+                    optimization: "实时处理优化",
+                    orientation: "根据设备方向调整布局",
+                    error: "错误处理和用户反馈"
+                },
+                conclusion: "本应用旨在通过利用尖端AI技术为用户提供愉快的体验。"
+            },
+            ko: {
+                nav: {
+                    home: "홈",
+                    details: "상세 설명",
+                    privacy: "개인정보 처리방침"
+                },
+                header: {
+                    title: "Magical Rice Bowl V3 - 상세 설명"
+                },
+                overview: {
+                    title: "앱 개요",
+                    description: "이 앱은 카메라로 촬영한 음식 이미지를 다른 요리 스타일로 변환합니다. 예를 들어, 일반 밥을 '카레'나 '라면' 등의 스타일로 변환할 수 있습니다."
+                },
+                features: {
+                    title: "주요 기능",
+                    realtime: "실시간 카메라 촬영",
+                    styles: "음식 스타일 변환（23가지 요리 스타일 선택 가능）",
+                    save: "변환 결과 저장",
+                    pause: "일시 정지/재개 기능",
+                    time: "처리 시간 표시"
+                },
+                tech: {
+                    title: "기술적 메커니즘",
+                    flow: {
+                        title: "1. 이미지 처리 흐름",
+                        step1: "카메라에서 이미지 캡처",
+                        step2: "음식 부분 자동 감지（세그멘테이션）",
+                        step3: "선택한 스타일로 변환",
+                        step4: "원본 배경과 합성하여 표시"
+                    },
+                    gan: {
+                        title: "2. GAN（Generative Adversarial Network）에 관하여",
+                        description: "GAN은 '적대적 생성 네트워크'라고 불리는 기술입니다. 다음 논문을 참조하세요：",
+                        paper: "Generative Adversarial Networks (2014)",
+                        mechanism: {
+                            title: "두 AI가 경쟁하는 메커니즘：",
+                            generator: "첫 번째 AI（Generator）：새로운 이미지를 생성",
+                            discriminator: "두 번째 AI（Discriminator）：진짜와 가짜를 판별"
+                        },
+                        learning: {
+                            title: "학습 메커니즘：",
+                            generator: "Generator는 '진짜 같은 이미지'를 만들려고 시도",
+                            discriminator: "Discriminator는 '진짜와 가짜를 구분하려고' 시도",
+                            result: "이 경쟁을 통해 Generator는 점차 진짜 같은 이미지를 만들 수 있게 됨"
+                        }
+                    },
+                    stargan: {
+                        title: "3. StarGANv2에 관하여",
+                        description: "StarGANv2는 더 고급 이미지 변환이 가능한 GAN의 일종입니다. 다음 논문을 참조하세요：",
+                        paper: "StarGAN v2: Diverse Image Synthesis for Multiple Domains (2019)",
+                        features: {
+                            title: "특징：",
+                            multiple: "단일 모델로 여러 스타일 변환 가능",
+                            reference: "참조 이미지의 스타일을 충실히 재현",
+                            quality: "고품질 변환 결과"
+                        },
+                        usage: {
+                            title: "이 앱에서의 사용：",
+                            models: "23가지 음식 스타일을 단일 모델로 처리",
+                            realtime: "실시간 변환 가능",
+                            natural: "자연스러운 변환 결과"
+                        }
+                    },
+                    segmentation: {
+                        title: "4. 세그멘테이션（DeepLabV3）",
+                        description: "DeepLabV3는 고정밀 시맨틱 세그멘테이션을 실현하는 기술입니다. 다음 논문을 참조하세요：",
+                        paper: "Rethinking Atrous Convolution for Semantic Image Segmentation (2017)",
+                        detection: "이미지에서 음식 부분을 자동으로 감지",
+                        separation: "배경과 음식 부분을 분리",
+                        target: "변환 대상을 정확하게 식별"
+                    }
+                },
+                usage: {
+                    title: "사용 방법",
+                    step1: "앱 실행 시 카메라가 시작됨",
+                    step2: "화면 하단의 음식 스타일에서 원하는 스타일 선택",
+                    step3: "카메라에 음식을 비추면 실시간으로 변환 결과가 표시됨",
+                    step4: "마음에 드는 결과가 나오면 저장 버튼으로 저장 가능",
+                    step5: "일시 정지 버튼으로 변환을 일시 정지할 수 있음"
+                },
+                characteristics: {
+                    title: "기술적 특징",
+                    ui: "SwiftUI를 사용한 모던한 UI",
+                    coreml: "CoreML을 통한 고속 추론 처리",
+                    optimization: "실시간 처리 최적화",
+                    orientation: "기기 방향에 따른 레이아웃 조정",
+                    error: "오류 처리와 사용자 피드백"
+                },
+                conclusion: "이 앱은 최첨단 AI 기술을 활용하여 사용자에게 즐거운 경험을 제공하는 것을 목표로 합니다."
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let translation = translations[lang];
+                for (const k of keys) {
+                    translation = translation[k];
+                }
+                if (translation) {
+                    element.textContent = translation;
+                }
+            });
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // 初期言語を設定
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'ja';
+            changeLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>

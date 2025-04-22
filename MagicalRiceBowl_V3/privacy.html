@@ -1,122 +1,398 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>プライバシーポリシー / Privacy Policy</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 20px;
-      line-height: 1.6;
-    }
-
-    .language-switch {
-      margin-bottom: 1.5em;
-    }
-
-    .language-switch button {
-      margin-right: 10px;
-      padding: 5px 10px;
-      font-size: 1em;
-      cursor: pointer;
-    }
-
-    .lang {
-      display: none;
-    }
-
-    .lang.active {
-      display: block;
-    }
-
-    h1 {
-      font-size: 1.8em;
-    }
-
-    h2 {
-      font-size: 1.4em;
-      margin-top: 1.5em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Rice Bowl V3 - プライバシーポリシー</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-top: 60px;
+        }
+        .navbar {
+            background-color: #2c3e50;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .privacy-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .page-header {
+            background-color: #3498db;
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+        .language-switcher {
+            margin-left: 20px;
+        }
+        .language-switcher .btn {
+            margin-left: 5px;
+            padding: 5px 10px;
+        }
+    </style>
 </head>
 <body>
-  <div class="language-switch">
-    <button onclick="switchLang('ja')">日本語</button>
-    <button onclick="switchLang('en')">English</button>
-  </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Magical Rice Bowl V3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="detail.html" data-i18n="nav.details">詳細説明</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="privacy.html" data-i18n="nav.privacy">プライバシーポリシー</a>
+                    </li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('ja')">日本語</button>
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('en')">English</button>
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('zh')">中文</button>
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('ko')">한국어</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <!-- 日本語セクション -->
-  <div id="lang-ja" class="lang active">
-    <h1>プライバシーポリシー</h1>
-    <p>本アプリ（以下「本アプリ」といいます）は、ユーザーのプライバシーを尊重し、以下の方針に基づいて個人情報を取り扱います。</p>
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 data-i18n="header.title">Magical Rice Bowl V3 - プライバシーポリシー</h1>
+        </div>
+    </div>
 
-    <h2>1. 取得する情報</h2>
-    <ul>
-      <li><strong>カメラ映像：</strong>リアルタイム変換処理に使用されますが、端末内のみで処理され、外部に送信されることはありません。</li>
-    </ul>
+    <div class="container">
+        <div class="privacy-section">
+            <h2 data-i18n="privacy.title">プライバシーポリシー</h2>
+            <p data-i18n="privacy.introduction">Magical Rice Bowl V3（以下「本アプリ」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、本アプリにおける個人情報の取り扱いについて説明します。</p>
+        </div>
 
-    <h2>2. 情報の利用目的</h2>
-    <ul>
-      <li>リアルタイム画像変換処理</li>
-      <li>アプリの品質向上・ユーザー体験の最適化（必要に応じて）</li>
-    </ul>
+        <div class="privacy-section">
+            <h3 data-i18n="collection.title">収集する情報</h3>
+            <p data-i18n="collection.description">本アプリは以下の情報を収集します：</p>
+            <ul>
+                <li data-i18n="collection.camera">カメラで撮影した画像データ（リアルタイム処理のため）</li>
+                <li data-i18n="collection.device">デバイス情報（機種、OSバージョンなど）</li>
+                <li data-i18n="collection.usage">アプリの使用状況（機能の利用頻度など）</li>
+                <li data-i18n="collection.photos">写真ライブラリへの保存（ユーザーが選択した場合のみ）</li>
+            </ul>
+        </div>
 
-    <h2>3. 情報の第三者提供</h2>
-    <p>本アプリは、取得した情報を第三者に提供することはありません。</p>
+        <div class="privacy-section">
+            <h3 data-i18n="purpose.title">利用目的</h3>
+            <p data-i18n="purpose.description">収集した情報は以下の目的で利用します：</p>
+            <ul>
+                <li data-i18n="purpose.function">アプリの機能提供（リアルタイム画像変換など）</li>
+                <li data-i18n="purpose.improvement">アプリの改善と新機能の開発</li>
+                <li data-i18n="purpose.support">ユーザーサポート</li>
+                <li data-i18n="purpose.performance">アプリのパフォーマンス最適化</li>
+            </ul>
+        </div>
 
-    <h2>4. データの保存</h2>
-    <p>本アプリは、カメラ映像や変換結果画像などのデータをサーバーに保存することはありません。すべての処理は端末内で行われます。</p>
+        <div class="privacy-section">
+            <h3 data-i18n="security.title">セキュリティ</h3>
+            <p data-i18n="security.description">収集した情報は適切なセキュリティ対策を講じて管理し、不正アクセス、紛失、破壊、改ざん、漏洩などを防止します。特に以下の点に注意を払っています：</p>
+            <ul>
+                <li data-i18n="security.local">画像データはデバイス内でのみ処理され、外部サーバーに送信されません</li>
+                <li data-i18n="security.camera">カメラアクセスは必要な時のみ要求し、使用後は適切に解放します</li>
+                <li data-i18n="security.storage">写真ライブラリへの保存はユーザーの明示的な許可を得て行います</li>
+            </ul>
+        </div>
 
-    <h2>5. お問い合わせ</h2>
-    <p>プライバシーに関するご質問がある場合は、以下のメールアドレスまでご連絡ください。</p>
-    <p>メールアドレス：<a href="mailto:fujita-h@mm.inf.uec.ac.jp">fujita-h@mm.inf.uec.ac.jp</a></p>
+        <div class="privacy-section">
+            <h3 data-i18n="thirdparty.title">第三者への提供</h3>
+            <p data-i18n="thirdparty.description">収集した情報は、以下の場合を除き、第三者に提供することはありません：</p>
+            <ul>
+                <li data-i18n="thirdparty.consent">ユーザーの同意がある場合</li>
+                <li data-i18n="thirdparty.law">法令に基づく場合</li>
+                <li data-i18n="thirdparty.emergency">人の生命、身体または財産の保護のために必要がある場合</li>
+            </ul>
+        </div>
 
-    <h2>6. 改定について</h2>
-    <p>本プライバシーポリシーは、必要に応じて予告なく改定される場合があります。最新のポリシーは本ページにて随時公開されます。</p>
+        <div class="privacy-section">
+            <h3 data-i18n="changes.title">プライバシーポリシーの変更</h3>
+            <p data-i18n="changes.description">本プライバシーポリシーは、必要に応じて変更される場合があります。変更があった場合は、本アプリ上で通知します。</p>
+        </div>
 
-    <p>最終更新日：2025年4月8日</p>
-  </div>
+        <div class="privacy-section">
+            <h3 data-i18n="contact.title">お問い合わせ</h3>
+            <p data-i18n="contact.description">本プライバシーポリシーに関するお問い合わせは、以下の連絡先までお願いします：</p>
+            <p data-i18n="contact.email">メールアドレス：fujita-h@mm.inf.uec.ac.jp</p>
+        </div>
 
-  <!-- 英語セクション -->
-  <div id="lang-en" class="lang">
-    <h1>Privacy Policy</h1>
-    <p>This app (hereinafter referred to as “the App”) respects your privacy and handles personal information in accordance with the following policy.</p>
+        <div class="privacy-section">
+            <p data-i18n="lastupdated">最終更新日：2025年4月23日</p>
+        </div>
+    </div>
 
-    <h2>1. Information We Collect</h2>
-    <ul>
-      <li><strong>Camera input:</strong> Used solely for real-time image transformation. This data is processed locally on your device and is not transmitted or stored externally.</li>
-    </ul>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">© 2025 Magical Rice Bowl V3. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <h2>2. Purpose of Use</h2>
-    <ul>
-      <li>Performing real-time image transformation</li>
-      <li>Improving app quality and optimizing user experience (only if necessary)</li>
-    </ul>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- i18n Data -->
+    <script>
+        const translations = {
+            ja: {
+                nav: {
+                    home: "ホーム",
+                    details: "詳細説明",
+                    privacy: "プライバシーポリシー"
+                },
+                header: {
+                    title: "Magical Rice Bowl V3 - プライバシーポリシー"
+                },
+                privacy: {
+                    title: "プライバシーポリシー",
+                    introduction: "Magical Rice Bowl V3（以下「本アプリ」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、本アプリにおける個人情報の取り扱いについて説明します。"
+                },
+                collection: {
+                    title: "収集する情報",
+                    description: "本アプリは以下の情報を収集します：",
+                    camera: "カメラで撮影した画像データ（リアルタイム処理のため）",
+                    device: "デバイス情報（機種、OSバージョンなど）",
+                    usage: "アプリの使用状況（機能の利用頻度など）",
+                    photos: "写真ライブラリへの保存（ユーザーが選択した場合のみ）"
+                },
+                purpose: {
+                    title: "利用目的",
+                    description: "収集した情報は以下の目的で利用します：",
+                    function: "アプリの機能提供（リアルタイム画像変換など）",
+                    improvement: "アプリの改善と新機能の開発",
+                    support: "ユーザーサポート",
+                    performance: "アプリのパフォーマンス最適化"
+                },
+                security: {
+                    title: "セキュリティ",
+                    description: "収集した情報は適切なセキュリティ対策を講じて管理し、不正アクセス、紛失、破壊、改ざん、漏洩などを防止します。特に以下の点に注意を払っています：",
+                    local: "画像データはデバイス内でのみ処理され、外部サーバーに送信されません",
+                    camera: "カメラアクセスは必要な時のみ要求し、使用後は適切に解放します",
+                    storage: "写真ライブラリへの保存はユーザーの明示的な許可を得て行います"
+                },
+                thirdparty: {
+                    title: "第三者への提供",
+                    description: "収集した情報は、以下の場合を除き、第三者に提供することはありません：",
+                    consent: "ユーザーの同意がある場合",
+                    law: "法令に基づく場合",
+                    emergency: "人の生命、身体または財産の保護のために必要がある場合"
+                },
+                changes: {
+                    title: "プライバシーポリシーの変更",
+                    description: "本プライバシーポリシーは、必要に応じて変更される場合があります。変更があった場合は、本アプリ上で通知します。"
+                },
+                contact: {
+                    title: "お問い合わせ",
+                    description: "本プライバシーポリシーに関するお問い合わせは、以下の連絡先までお願いします：",
+                    email: "メールアドレス：fujita-h@mm.inf.uec.ac.jp"
+                },
+                lastupdated: "最終更新日：2025年4月23日"
+            },
+            en: {
+                nav: {
+                    home: "Home",
+                    details: "Details",
+                    privacy: "Privacy Policy"
+                },
+                header: {
+                    title: "Magical Rice Bowl V3 - Privacy Policy"
+                },
+                privacy: {
+                    title: "Privacy Policy",
+                    introduction: "Magical Rice Bowl V3 (hereinafter referred to as 'this app') respects user privacy and strives to protect personal information. This privacy policy explains how personal information is handled in this app."
+                },
+                collection: {
+                    title: "Information Collected",
+                    description: "This app collects the following information:",
+                    camera: "Image data captured by the camera (for real-time processing)",
+                    device: "Device information (model, OS version, etc.)",
+                    usage: "App usage statistics (feature usage frequency, etc.)",
+                    photos: "Photo library access (only when user chooses to save)"
+                },
+                purpose: {
+                    title: "Purpose of Use",
+                    description: "Collected information is used for the following purposes:",
+                    function: "Providing app features (real-time image transformation, etc.)",
+                    improvement: "App improvement and new feature development",
+                    support: "User support",
+                    performance: "App performance optimization"
+                },
+                security: {
+                    title: "Security",
+                    description: "Collected information is managed with appropriate security measures to prevent unauthorized access, loss, destruction, alteration, and leakage. We pay special attention to the following:",
+                    local: "Image data is processed only on the device and not sent to external servers",
+                    camera: "Camera access is requested only when needed and properly released after use",
+                    storage: "Photo library access requires explicit user permission"
+                },
+                thirdparty: {
+                    title: "Third-Party Disclosure",
+                    description: "Collected information will not be provided to third parties except in the following cases:",
+                    consent: "With user consent",
+                    law: "As required by law",
+                    emergency: "When necessary to protect human life, body, or property"
+                },
+                changes: {
+                    title: "Changes to Privacy Policy",
+                    description: "This privacy policy may be changed as necessary. Users will be notified of any changes through the app."
+                },
+                contact: {
+                    title: "Contact",
+                    description: "For inquiries regarding this privacy policy, please contact:",
+                    email: "Email: fujita-h@mm.inf.uec.ac.jp"
+                },
+                lastupdated: "Last Updated: April 23, 2025"
+            },
+            zh: {
+                nav: {
+                    home: "首页",
+                    details: "详细说明",
+                    privacy: "隐私政策"
+                },
+                header: {
+                    title: "Magical Rice Bowl V3 - 隐私政策"
+                },
+                privacy: {
+                    title: "隐私政策",
+                    introduction: "Magical Rice Bowl V3（以下简称'本应用'）尊重用户隐私，致力于保护个人信息。本隐私政策说明本应用如何处理个人信息。"
+                },
+                collection: {
+                    title: "收集的信息",
+                    description: "本应用收集以下信息：",
+                    camera: "相机拍摄的图像数据（用于实时处理）",
+                    device: "设备信息（型号、操作系统版本等）",
+                    usage: "应用使用情况（功能使用频率等）",
+                    photos: "照片库访问（仅在用户选择保存时）"
+                },
+                purpose: {
+                    title: "使用目的",
+                    description: "收集的信息用于以下目的：",
+                    function: "提供应用功能（实时图像转换等）",
+                    improvement: "应用改进和新功能开发",
+                    support: "用户支持",
+                    performance: "应用性能优化"
+                },
+                security: {
+                    title: "安全性",
+                    description: "收集的信息采取适当的安全措施进行管理，防止未经授权的访问、丢失、破坏、篡改和泄露。我们特别关注以下方面：",
+                    local: "图像数据仅在设备上处理，不会发送到外部服务器",
+                    camera: "仅在需要时请求相机访问，使用后适当释放",
+                    storage: "照片库访问需要用户明确许可"
+                },
+                thirdparty: {
+                    title: "向第三方提供",
+                    description: "收集的信息除以下情况外，不会向第三方提供：",
+                    consent: "获得用户同意时",
+                    law: "根据法律规定时",
+                    emergency: "为保护人的生命、身体或财产而必要时"
+                },
+                changes: {
+                    title: "隐私政策的变更",
+                    description: "本隐私政策可能会根据需要变更。如有变更，将在应用中通知。"
+                },
+                contact: {
+                    title: "联系方式",
+                    description: "有关本隐私政策的咨询，请联系：",
+                    email: "电子邮箱：fujita-h@mm.inf.uec.ac.jp"
+                },
+                lastupdated: "最后更新：2025年4月23日"
+            },
+            ko: {
+                nav: {
+                    home: "홈",
+                    details: "상세 설명",
+                    privacy: "개인정보 처리방침"
+                },
+                header: {
+                    title: "Magical Rice Bowl V3 - 개인정보 처리방침"
+                },
+                privacy: {
+                    title: "개인정보 처리방침",
+                    introduction: "Magical Rice Bowl V3（이하 '본 앱'）은 사용자의 프라이버시를 존중하며 개인정보 보호에 노력하고 있습니다. 본 개인정보 처리방침에서는 본 앱에서의 개인정보 처리에 대해 설명합니다."
+                },
+                collection: {
+                    title: "수집하는 정보",
+                    description: "본 앱은 다음과 같은 정보를 수집합니다：",
+                    camera: "카메라로 촬영한 이미지 데이터（실시간 처리용）",
+                    device: "기기 정보（기종, OS 버전 등）",
+                    usage: "앱 사용 현황（기능 이용 빈도 등）",
+                    photos: "사진 라이브러리 저장（사용자가 선택한 경우에만）"
+                },
+                purpose: {
+                    title: "이용 목적",
+                    description: "수집한 정보는 다음과 같은 목적으로 이용합니다：",
+                    function: "앱 기능 제공（실시간 이미지 변환 등）",
+                    improvement: "앱 개선 및 신기능 개발",
+                    support: "사용자 지원",
+                    performance: "앱 성능 최적화"
+                },
+                security: {
+                    title: "보안",
+                    description: "수집한 정보는 적절한 보안 조치를 통해 관리하며, 무단 접근, 분실, 파괴, 변조, 유출 등을 방지합니다. 특히 다음 사항에 주의를 기울이고 있습니다：",
+                    local: "이미지 데이터는 기기 내에서만 처리되며 외부 서버로 전송되지 않습니다",
+                    camera: "카메라 접근은 필요한 경우에만 요청하며 사용 후 적절히 해제합니다",
+                    storage: "사진 라이브러리 저장은 사용자의 명시적 허가를 받아 진행합니다"
+                },
+                thirdparty: {
+                    title: "제3자 제공",
+                    description: "수집한 정보는 다음의 경우를 제외하고 제3자에게 제공하지 않습니다：",
+                    consent: "사용자의 동의가 있는 경우",
+                    law: "법령에 근거한 경우",
+                    emergency: "사람의 생명, 신체 또는 재산의 보호를 위해 필요한 경우"
+                },
+                changes: {
+                    title: "개인정보 처리방침 변경",
+                    description: "본 개인정보 처리방침은 필요에 따라 변경될 수 있습니다. 변경이 있는 경우 본 앱에서 통지합니다."
+                },
+                contact: {
+                    title: "문의",
+                    description: "본 개인정보 처리방침에 관한 문의는 다음 연락처로 부탁드립니다：",
+                    email: "이메일：fujita-h@mm.inf.uec.ac.jp"
+                },
+                lastupdated: "최종 수정일：2025년 4월 23일"
+            }
+        };
 
-    <h2>3. Sharing with Third Parties</h2>
-    <p>The App does not share collected information with third parties under any circumstances.</p>
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let translation = translations[lang];
+                for (const k of keys) {
+                    translation = translation[k];
+                }
+                if (translation) {
+                    element.textContent = translation;
+                }
+            });
+            localStorage.setItem('preferredLanguage', lang);
+        }
 
-    <h2>4. Data Storage</h2>
-    <p>No data (such as camera input or generated images) is stored on external servers. All processing occurs locally on the device.</p>
-
-    <h2>5. Contact</h2>
-    <p>If you have any questions regarding this privacy policy, please contact us at:</p>
-    <p>Email: <a href="mailto:fujita-h@mm.inf.uec.ac.jp">fujita-h@mm.inf.uec.ac.jp</a></p>
-
-    <h2>6. Changes to This Policy</h2>
-    <p>This Privacy Policy may be revised from time to time without prior notice. The latest version will always be available on this page.</p>
-
-    <p>Last updated: April 8, 2025</p>
-  </div>
-
-  <script>
-    function switchLang(lang) {
-      document.querySelectorAll(".lang").forEach((el) => {
-        el.classList.remove("active");
-      });
-      document.getElementById("lang-" + lang).classList.add("active");
-    }
-  </script>
+        // 初期言語を設定
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'ja';
+            changeLanguage(savedLang);
+        });
+    </script>
 </body>
 </html>

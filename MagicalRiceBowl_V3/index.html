@@ -1,83 +1,396 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Magical Rice Bowl V3 - リアルタイム画像変換アプリ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    header {
-      background-color: #222;
-      color: white;
-      padding: 1.5em;
-      text-align: center;
-    }
-
-    main {
-      padding: 2em;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    img.screenshot {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-top: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .store-badge {
-      margin-top: 30px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1em;
-      font-size: 0.9em;
-      color: #888;
-    }
-
-    a {
-      color: #007AFF;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Rice Bowl V3 - ホーム</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-top: 60px;
+        }
+        .navbar {
+            background-color: #2c3e50;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .feature-card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .app-screenshot {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            width: 50%;
+            display: block;
+        }
+        .language-switcher {
+            margin-left: 20px;
+        }
+        .language-switcher .btn {
+            margin-left: 5px;
+            padding: 5px 10px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Magical Rice Bowl V3</h1>
-    <p>リアルタイムで料理画像を変換するスマホアプリ</p>
-  </header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Magical Rice Bowl V3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" data-i18n="nav.home">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="detail.html" data-i18n="nav.details">詳細説明</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="privacy.html" data-i18n="nav.privacy">プライバシーポリシー</a>
+                    </li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('ja')">日本語</button>
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('en')">English</button>
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('zh')">中文</button>
+                    <button class="btn btn-outline-light btn-sm" onclick="changeLanguage('ko')">한국어</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <main>
-    <h2>アプリについて</h2>
-    <p>カメラを使って料理画像をリアルタイムで変換できます。対応している種類は23種類です。</p>
-    <img src="screenshot.PNG" alt="アプリのスクリーンショット" class="screenshot">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4 mb-4" data-i18n="hero.title">Magical Rice Bowl V3</h1>
+            <p class="lead mb-4" data-i18n="hero.subtitle">AIがあなたの食事を魔法のように変身させます</p>
+            <a href="detail.html" class="btn btn-primary btn-lg" data-i18n="hero.button">詳細を見る</a>
+        </div>
+    </section>
 
-    <div class="store-badge">
-      <!-- App Store バッジ（アカウント登録後に公式バッジを取得可能）-->
-      <a href="https://apps.apple.com/app/idXXXXXXXXXX" target="_blank">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="180">
-      </a>
-    </div>
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="features.title">主な機能</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="features.realtime.title">リアルタイム変換</h5>
+                            <p class="card-text" data-i18n="features.realtime.description">カメラで撮影した食事をリアルタイムで別の料理に変換します。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="features.styles.title">22種類のスタイル</h5>
+                            <p class="card-text" data-i18n="features.styles.description">カレー、ラーメン、ピザなど、22種類の料理スタイルから選択可能です。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="features.save.title">簡単保存</h5>
+                            <p class="card-text" data-i18n="features.save.description">気に入った変換結果を簡単に保存できます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p><a href="privacy.html">プライバシーポリシーはこちら</a></p>
-  </main>
+    <!-- App Screenshots -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="screenshots.title">アプリの様子</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="screenshot.PNG" alt="アプリ画面1" class="img-fluid app-screenshot">
+                </div>
+                <div class="col-md-6">
+                    <img src="screenshot2.PNG" alt="アプリ画面2" class="img-fluid app-screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 Magical Rice Bowl V3. All rights reserved. | Contact: <a href="mailto:fujita-h@mm.inf.uec.ac.jp">fujita-h@mm.inf.uec.ac.jp</a>
-  </footer>
+    <!-- Technology Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="technology.title">使用技術</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 data-i18n="technology.stargan.title">StarGANv2</h4>
+                    <p data-i18n="technology.stargan.description">最先端の画像変換技術を使用して、高品質な変換結果を実現しています。</p>
+                    <a href="https://arxiv.org/abs/1912.01865" target="_blank" class="btn btn-outline-primary btn-sm" data-i18n="technology.stargan.paper">論文を読む</a>
+                </div>
+                <div class="col-md-6">
+                    <h4 data-i18n="technology.deeplab.title">DeepLabV3</h4>
+                    <p data-i18n="technology.deeplab.description">食事部分の正確な検出と分離を実現するセグメンテーション技術を使用しています。</p>
+                    <a href="https://arxiv.org/abs/1706.05587" target="_blank" class="btn btn-outline-primary btn-sm" data-i18n="technology.deeplab.paper">論文を読む</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4" data-i18n="cta.title">さあ、始めましょう！</h2>
+            <p class="lead mb-4" data-i18n="cta.subtitle">あなたの食事を魔法のように変身させてみませんか？</p>
+            <a href="detail.html" class="btn btn-light btn-lg" data-i18n="cta.button">詳細を見る</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p class="mb-0">© 2025 Magical Rice Bowl V3. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- i18n Data -->
+    <script>
+        const translations = {
+            ja: {
+                nav: {
+                    home: "ホーム",
+                    details: "詳細説明",
+                    privacy: "プライバシーポリシー"
+                },
+                hero: {
+                    title: "Magical Rice Bowl V3",
+                    subtitle: "AIがあなたの食事を魔法のように変身させます",
+                    button: "詳細を見る"
+                },
+                features: {
+                    title: "主な機能",
+                    realtime: {
+                        title: "リアルタイム変換",
+                        description: "カメラで撮影した食事をリアルタイムで別の料理に変換します。"
+                    },
+                    styles: {
+                        title: "22種類のスタイル",
+                        description: "カレー、ラーメン、ピザなど、22種類の料理スタイルから選択可能です。"
+                    },
+                    save: {
+                        title: "簡単保存",
+                        description: "気に入った変換結果を簡単に保存できます。"
+                    }
+                },
+                screenshots: {
+                    title: "アプリの様子"
+                },
+                technology: {
+                    title: "使用技術",
+                    stargan: {
+                        title: "StarGANv2",
+                        description: "最先端の画像変換技術を使用して、高品質な変換結果を実現しています。",
+                        paper: "論文を読む"
+                    },
+                    deeplab: {
+                        title: "DeepLabV3",
+                        description: "食事部分の正確な検出と分離を実現するセグメンテーション技術を使用しています。",
+                        paper: "論文を読む"
+                    }
+                },
+                cta: {
+                    title: "さあ、始めましょう！",
+                    subtitle: "あなたの食事を魔法のように変身させてみませんか？",
+                    button: "詳細を見る"
+                }
+            },
+            en: {
+                nav: {
+                    home: "Home",
+                    details: "Details",
+                    privacy: "Privacy Policy"
+                },
+                hero: {
+                    title: "Magical Rice Bowl V3",
+                    subtitle: "Transform your meals magically with AI",
+                    button: "Learn More"
+                },
+                features: {
+                    title: "Main Features",
+                    realtime: {
+                        title: "Real-time Transformation",
+                        description: "Transform your meals in real-time using your camera."
+                    },
+                    styles: {
+                        title: "22 Food Styles",
+                        description: "Choose from 22 different food styles including curry, ramen, and pizza."
+                    },
+                    save: {
+                        title: "Easy Saving",
+                        description: "Save your favorite transformations with a single tap."
+                    }
+                },
+                screenshots: {
+                    title: "App Screenshots"
+                },
+                technology: {
+                    title: "Technology",
+                    stargan: {
+                        title: "StarGANv2",
+                        description: "Using cutting-edge image transformation technology for high-quality results.",
+                        paper: "Read Paper"
+                    },
+                    deeplab: {
+                        title: "DeepLabV3",
+                        description: "Using segmentation technology for accurate food detection and separation.",
+                        paper: "Read Paper"
+                    }
+                },
+                cta: {
+                    title: "Let's Get Started!",
+                    subtitle: "Would you like to transform your meals magically?",
+                    button: "Learn More"
+                }
+            },
+            zh: {
+                nav: {
+                    home: "首页",
+                    details: "详细说明",
+                    privacy: "隐私政策"
+                },
+                hero: {
+                    title: "Magical Rice Bowl V3",
+                    subtitle: "用AI魔法般改变您的餐食",
+                    button: "了解更多"
+                },
+                features: {
+                    title: "主要功能",
+                    realtime: {
+                        title: "实时转换",
+                        description: "使用相机实时将餐食转换为其他料理。"
+                    },
+                    styles: {
+                        title: "22种风格",
+                        description: "可从咖喱、拉面、披萨等22种料理风格中选择。"
+                    },
+                    save: {
+                        title: "轻松保存",
+                        description: "轻松保存您喜欢的转换结果。"
+                    }
+                },
+                screenshots: {
+                    title: "应用截图"
+                },
+                technology: {
+                    title: "使用技术",
+                    stargan: {
+                        title: "StarGANv2",
+                        description: "使用先进的图像转换技术实现高质量结果。",
+                        paper: "阅读论文"
+                    },
+                    deeplab: {
+                        title: "DeepLabV3",
+                        description: "使用分割技术实现精确的食物检测和分离。",
+                        paper: "阅读论文"
+                    }
+                },
+                cta: {
+                    title: "开始使用！",
+                    subtitle: "想要魔法般改变您的餐食吗？",
+                    button: "了解更多"
+                }
+            },
+            ko: {
+                nav: {
+                    home: "홈",
+                    details: "상세 설명",
+                    privacy: "개인정보 처리방침"
+                },
+                hero: {
+                    title: "Magical Rice Bowl V3",
+                    subtitle: "AI로 당신의 식사를 마법처럼 변신시켜보세요",
+                    button: "자세히 보기"
+                },
+                features: {
+                    title: "주요 기능",
+                    realtime: {
+                        title: "실시간 변환",
+                        description: "카메라로 촬영한 식사를 실시간으로 다른 요리로 변환합니다."
+                    },
+                    styles: {
+                        title: "22가지 스타일",
+                        description: "카레, 라면, 피자 등 22가지 요리 스타일 중에서 선택할 수 있습니다."
+                    },
+                    save: {
+                        title: "쉬운 저장",
+                        description: "마음에 드는 변환 결과를 쉽게 저장할 수 있습니다."
+                    }
+                },
+                screenshots: {
+                    title: "앱 스크린샷"
+                },
+                technology: {
+                    title: "사용 기술",
+                    stargan: {
+                        title: "StarGANv2",
+                        description: "최첨단 이미지 변환 기술을 사용하여 고품질 결과를 실현합니다.",
+                        paper: "논문 읽기"
+                    },
+                    deeplab: {
+                        title: "DeepLabV3",
+                        description: "정확한 음식 검출과 분리를 위한 세그멘테이션 기술을 사용합니다.",
+                        paper: "논문 읽기"
+                    }
+                },
+                cta: {
+                    title: "시작해 보세요!",
+                    subtitle: "당신의 식사를 마법처럼 변신시켜보시겠습니까?",
+                    button: "자세히 보기"
+                }
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let translation = translations[lang];
+                for (const k of keys) {
+                    translation = translation[k];
+                }
+                if (translation) {
+                    element.textContent = translation;
+                }
+            });
+        }
+
+        // 初期言語を設定
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'ja';
+            changeLanguage(savedLang);
+        });
+    </script>
 </body>
 </html>
