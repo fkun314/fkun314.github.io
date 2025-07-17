@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用規約 - LiDARCalorieCam</title>
+    <style>
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #34C759;
+            --text-color: #1D1D1F;
+            --bg-color: #F5F5F7;
+            --white: #FFFFFF;
+            --gray: #8E8E93;
+            --light-gray: #F2F2F7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .updated-date {
+            opacity: 0.8;
+        }
+
+        .content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: var(--text-color);
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .warning {
+            background: #FFF3E0;
+            border-left: 4px solid #FF9500;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>利用規約</h1>
+            <p class="updated-date">最終更新日: 2025年7月17日</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="section">
+                <h2>1. はじめに</h2>
+                <p>本利用規約（以下「本規約」）は、LiDARCalorieCam（以下「本アプリ」）の利用に関する条件を定めるものです。本アプリをご利用いただく際は、必ず本規約をお読みいただき、同意の上でご利用ください。</p>
+            </div>
+
+            <div class="section">
+                <h2>2. サービスの概要</h2>
+                <p>本アプリは、ARKit技術とAI機械学習を活用して、iPhoneのカメラおよびLiDARセンサーを通じて物体の3D体積測定および食品のカロリー計算を行うアプリケーションです。</p>
+                
+                <h3>主な機能</h3>
+                <ul>
+                    <li>ARカメラを使用した物体の3D体積測定</li>
+                    <li>AI食品認識による自動食品分類</li>
+                    <li>体積データに基づく重量とカロリーの推定</li>
+                    <li>測定結果の可視化とデータ保存</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. 利用条件</h2>
+                
+                <h3>3.1 利用資格</h3>
+                <ul>
+                    <li>本アプリは13歳以上の方のみご利用いただけます</li>
+                    <li>iOS 17.0以上、LiDARセンサーを搭載したiPhone ProシリーズまたはiPad Proシリーズが必要です</li>
+                </ul>
+
+                <h3>3.2 禁止事項</h3>
+                <p>以下の行為を禁止します：</p>
+                <ul>
+                    <li>本アプリを違法な目的で使用すること</li>
+                    <li>他のユーザーや第三者に迷惑をかける行為</li>
+                    <li>本アプリの機能を不正に改変または回避すること</li>
+                    <li>商用目的での無断使用（個人利用は除く）</li>
+                    <li>測定結果を医療診断や治療の根拠として使用すること</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. 免責事項</h2>
+                
+                <h3>4.1 測定精度について</h3>
+                <div class="warning">
+                    <p><strong>重要:</strong> 本アプリの測定結果は参考値であり、100%の精度を保証するものではありません。</p>
+                </div>
+                <ul>
+                    <li>測定環境、物体の形状、光線条件等により結果が変動する場合があります</li>
+                    <li>重要な用途では、別途正確な測定機器での確認をお願いします</li>
+                </ul>
+
+                <h3>4.2 健康情報について</h3>
+                <div class="warning">
+                    <p><strong>健康管理に関する注意:</strong> カロリー計算結果は一般的な栄養データに基づく推定値です。</p>
+                </div>
+                <ul>
+                    <li>個人の健康状態、アレルギー、特別な食事制限については考慮されません</li>
+                    <li>医療目的での使用は避け、必要に応じて専門医にご相談ください</li>
+                </ul>
+
+                <h3>4.3 技術的制限</h3>
+                <ul>
+                    <li>ARKit技術の制限等により、すべての環境で正常に動作しない場合があります</li>
+                    <li>ネットワーク接続が不安定な場合、一部機能が制限される場合があります</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>5. データの取り扱い</h2>
+                
+                <h3>5.1 収集データ</h3>
+                <ul>
+                    <li>撮影された画像データ（処理後は削除）</li>
+                    <li>測定結果データ</li>
+                    <li>アプリ使用状況に関する匿名化された統計データ</li>
+                </ul>
+
+                <h3>5.2 データの利用目的</h3>
+                <ul>
+                    <li>測定精度の向上</li>
+                    <li>サービス改善のための分析</li>
+                    <li>技術的問題の解決</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. 知的財産権</h2>
+                
+                <h3>6.1 アプリの権利</h3>
+                <p>本アプリおよび関連する全ての知的財産権は、開発者に帰属します。</p>
+
+                <h3>6.2 ユーザーコンテンツ</h3>
+                <ul>
+                    <li>ユーザーが撮影した画像の著作権はユーザーに帰属します</li>
+                    <li>測定結果データの利用権は非独占的にユーザーに付与されます</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. サービスの変更・終了</h2>
+                
+                <h3>7.1 サービスの変更</h3>
+                <p>開発者は事前の通知なく、本アプリの内容を変更または改良することができます。</p>
+
+                <h3>7.2 サービスの終了</h3>
+                <p>開発者は30日前の事前通知により、本サービスを終了することができます。</p>
+            </div>
+
+            <div class="section">
+                <h2>8. 規約の変更</h2>
+                <p>本規約は事前の通知なく変更される場合があります。変更後の規約は、アプリ内での表示またはWebサイトでの公開により効力を発します。</p>
+            </div>
+
+            <div class="section">
+                <h2>9. 準拠法</h2>
+                <p>本規約は日本法に準拠します。</p>
+            </div>
+
+            <div class="section">
+                <h2>10. お問い合わせ</h2>
+                <p>本規約に関するご質問やご意見は、以下の方法でお問い合わせください：</p>
+                <div class="highlight">
+                    <ul>
+                        <li>メール: appdev-yanailab@mm.inf.uec.ac.jp</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <p style="text-align: center; color: var(--gray); font-size: 0.9rem;">
+                    © 2025 LiDARCalorieCam. All rights reserved.
+                </p>
+            </div>
+
+            <a href="index.html" class="back-link">← トップページに戻る</a>
+        </div>
+    </div>
+</body>
+</html>

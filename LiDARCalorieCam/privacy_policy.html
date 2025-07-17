@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー - LiDARCalorieCam</title>
+    <style>
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #34C759;
+            --text-color: #1D1D1F;
+            --bg-color: #F5F5F7;
+            --white: #FFFFFF;
+            --gray: #8E8E93;
+            --light-gray: #F2F2F7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .updated-date {
+            opacity: 0.8;
+        }
+
+        .content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: var(--text-color);
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>プライバシーポリシー</h1>
+            <p class="updated-date">最終更新日: 2025年7月17日</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="section">
+                <h2>1. はじめに</h2>
+                <p>本プライバシーポリシー（以下「本ポリシー」）は、LiDARCalorieCam（以下「本アプリ」）における個人情報の取り扱いについて説明するものです。本アプリをご利用いただく際は、本ポリシーをご確認いただき、内容に同意の上でご利用ください。</p>
+            </div>
+
+            <div class="section">
+                <h2>2. 収集する情報</h2>
+                
+                <h3>2.1 カメラ・画像データ</h3>
+                <ul>
+                    <li><strong>収集目的</strong>: 物体の3D体積測定および食品認識</li>
+                    <li><strong>収集方法</strong>: ARKitを通じたカメラアクセス</li>
+                    <li><strong>データ処理</strong>: 
+                        <ul>
+                            <li>撮影された画像は一時的にメモリに保存</li>
+                            <li>AI処理（セグメンテーション、分類）後に削除</li>
+                            <li>測定結果のみが保持される</li>
+                        </ul>
+                    </li>
+                    <li><strong>外部送信</strong>: 体積計算のためWebAPI（https://mm.cs.uec.ac.jp/）に送信</li>
+                </ul>
+
+                <h3>2.2 測定データ</h3>
+                <ul>
+                    <li><strong>収集内容</strong>: 
+                        <ul>
+                            <li>物体の寸法データ（水平・垂直サイズ）</li>
+                            <li>体積測定結果</li>
+                            <li>食品分類結果</li>
+                            <li>カロリー計算結果</li>
+                        </ul>
+                    </li>
+                    <li>AI処理後に削除</li>
+                </ul>
+
+                <h3>2.3 技術的情報</h3>
+                <ul>
+                    <li><strong>収集内容</strong>:
+                        <ul>
+                            <li>デバイスの向き情報（測定精度向上のため）</li>
+                            <li>ARセッション状態</li>
+                            <li>アプリクラッシュレポート（匿名化済み）</li>
+                        </ul>
+                    </li>
+                    <li><strong>利用目的</strong>: アプリの安定性向上とバグ修正</li>
+                </ul>
+
+                <h3>2.4 接続状態情報</h3>
+                <ul>
+                    <li><strong>収集内容</strong>: WebAPI接続状態の監視データ</li>
+                    <li><strong>利用目的</strong>: サービス品質の向上とユーザーエクスペリエンス改善</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. 情報の利用目的</h2>
+                
+                <h3>3.1 主要機能の提供</h3>
+                <ul>
+                    <li>物体の3D体積測定</li>
+                    <li>AI食品認識による自動分類</li>
+                    <li>重量およびカロリーの推定計算</li>
+                    <li>測定結果の可視化と保存</li>
+                </ul>
+
+                <h3>3.2 サービス改善</h3>
+                <ul>
+                    <li>測定精度の向上</li>
+                    <li>新機能の開発</li>
+                    <li>バグ修正とパフォーマンス改善</li>
+                    <li>ユーザーエクスペリエンス向上</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. 情報の共有・提供</h2>
+                
+                <h3>4.1 第三者への提供</h3>
+                <p>個人情報は以下の場合を除き、第三者に提供されることはありません：</p>
+                <ul>
+                    <li>ユーザーの同意がある場合</li>
+                    <li>法令に基づく場合</li>
+                    <li>生命、身体または財産の保護のため必要な場合</li>
+                </ul>
+
+                <h3>4.2 外部サービスとの連携</h3>
+                <div class="highlight">
+                    <p><strong>WebAPI（https://mm.cs.uec.ac.jp/）</strong>: 体積計算処理</p>
+                    <ul>
+                        <li>送信データ: 3D点群データ、画像データ（圧縮済み）</li>
+                        <li>データ保護: HTTPS暗号化通信</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>5. データの保護</h2>
+                
+                <h3>5.1 技術的対策</h3>
+                <ul>
+                    <li>すべてのネットワーク通信でHTTPS暗号化を使用</li>
+                    <li>機密データのローカル暗号化</li>
+                    <li>定期的なセキュリティ監査の実施</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. データの保存期間</h2>
+                
+                <h3>6.1 画像データ</h3>
+                <ul>
+                    <li>撮影された画像: 処理完了後即座に削除</li>
+                    <li>一時的なメモリ保存のみ（永続化されない）</li>
+                    <li>サーバー側: 本研究が終了してから最大５年間保存される場合があります</li>
+                </li>
+                </ul>
+
+                <h3>6.2 測定結果データ</h3>
+                <ul>
+                    <li>デバイス内保存: アプリを閉じるまで</li>
+                    <li>サーバー側: 本研究が終了してから最大５年間保存される場合があります</li>
+                </ul>
+
+                <h3>6.3 ログデータ</h3>
+                <ul>
+                    <li>技術的ログ: 最大30日間</li>
+                    <li>匿名化された統計データ: 最大1年間</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. ユーザーの権利</h2>
+                
+                <h3>7.1 データの確認・修正</h3>
+                <ul>
+                    <li>保存された測定結果の確認</li>
+                    <li>不正確なデータの修正・削除</li>
+                </ul>
+
+                <h3>7.2 データの削除</h3>
+                <ul>
+                    <li>アプリ削除によるすべてのデータ消去</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>8. 子どもの個人情報</h2>
+                <p>本アプリは13歳未満の子どもを対象としていません。13歳未満の子どもの個人情報を意図的に収集することはありません。</p>
+            </div>
+
+            <div class="section">
+                <h2>9. 国際的なデータ転送</h2>
+                <p>本アプリは日本国内のサーバーを使用しており、個人情報の国外転送は行いません。</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Cookie・類似技術</h2>
+                <p>本アプリはCookieを使用していませんが、以下の技術を使用しています：</p>
+                <ul>
+                    <li>UserDefaults（設定情報の保存）</li>
+                    <li>Core Data（測定結果の保存）</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>11. 法的根拠（GDPR対応）</h2>
+                <p>EUユーザーに対して、以下の法的根拠に基づいて個人情報を処理します：</p>
+                <ul>
+                    <li>契約の履行（サービス提供）</li>
+                    <li>正当な利益（サービス改善）</li>
+                    <li>同意（分析データ利用）</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>12. プライバシーポリシーの変更</h2>
+                <p>本ポリシーは事前の通知なく変更される場合があります。重要な変更については、アプリ内またはWebサイトで通知します。</p>
+            </div>
+
+            <div class="section">
+                <h2>13. お問い合わせ</h2>
+                <p>プライバシーに関するご質問やご要望は、以下の方法でお問い合わせください：</p>
+                <ul>
+                    <li>メール: appdev-yanailab@mm.inf.uec.ac.jp</li>
+                </ul>
+            </div>
+
+            <a href="index.html" class="back-link">← トップページに戻る</a>
+        </div>
+    </div>
+</body>
+</html>
